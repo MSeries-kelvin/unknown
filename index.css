@@ -53,6 +53,9 @@ main {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100px;
+    overflow: auto;
+    padding: 0 20px;
+    text-align: center;
 }
 
 footer {
