@@ -30,11 +30,11 @@ body {
 }
 
 header {
-    border-bottom: 1px solid #ececec;
+    /* border-bottom: 1px solid #ececec; */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 20px;
 }
 
 header img {
@@ -49,7 +49,10 @@ header img.logo {
 
 
 main {
-    
+    background-image: url(icons/timer_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px;
 }
 
 footer {
