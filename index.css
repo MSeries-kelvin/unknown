@@ -83,3 +83,7 @@ footer div img {
 footer div p {
     font-size: 12px;
 }
+
+footer div p.active {
+    color: #6600cc;
+}
