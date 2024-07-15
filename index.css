@@ -4,7 +4,7 @@
 .montserrat-body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -60,7 +60,7 @@ main {
 }
 
 footer {
-    border-top: 1px solid #ececec;
+    border-top: 1px solid #e6e6e6;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-around;
@@ -75,6 +75,7 @@ footer div {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    font-weight: 600;
 }
 
 footer div img {
