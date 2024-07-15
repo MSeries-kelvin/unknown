@@ -18,117 +18,45 @@ const main = document.querySelector("main");
 
 homeTabBtn.addEventListener("click", () => {
     // Disable any active tab
-    var imgs = tasksTabBtn.getElementsByTagName("img");
-    var p = tasksTabBtn.getElementsByTagName("p");
+    tasksTabBtn.querySelector("img").src = "icons/splitscreen_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg";
+    tasksTabBtn.querySelector("p").classList.remove("active");
 
-    for (let i = 0; i < imgs.length; i++) {
-        imgs[i].src = "icons/splitscreen_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg";
-    }
-
-    for (let i = 0; i < p.length; i++) {
-        p[i].classList.remove("active");
-    }
-
-    var imgs = profileTabBtn.getElementsByTagName("img");
-    var p = profileTabBtn.getElementsByTagName("p");
-
-    for (let i = 0; i < imgs.length; i++) {
-        imgs[i].src = "icons/person_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg";
-    }
-
-    for (let i = 0; i < p.length; i++) {
-        p[i].classList.remove("active");
-    }
+    profileTabBtn.querySelector("img").src = "icons/person_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg";
+    profileTabBtn.querySelector("p").classList.remove("active");
 
     // Enable this tab
-    var imgs = homeTabBtn.getElementsByTagName("img");
-    var p = homeTabBtn.getElementsByTagName("p");
-
-    for (let i = 0; i < imgs.length; i++) {
-        imgs[i].src = "icons/home_30dp_E8EAED_FILL1_wght400_GRAD0_opsz24.svg";
-    }
-
-    for (let i = 0; i < p.length; i++) {
-        p[i].classList.add("active");
-    }
+    homeTabBtn.querySelector("img").src = "icons/home_30dp_E8EAED_FILL1_wght400_GRAD0_opsz24.svg";
+    homeTabBtn.querySelector("p").classList.add("active");
 
     main.style.backgroundImage = "url(icons/home_30dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg)";
 });
 
 tasksTabBtn.addEventListener("click", () => {
     // Disable any active tab
-    var imgs = homeTabBtn.getElementsByTagName("img");
-    var p = homeTabBtn.getElementsByTagName("p");
+    homeTabBtn.querySelector("img").src = "icons/home_30dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg";
+    homeTabBtn.querySelector("p").classList.remove("active");
 
-    for (let i = 0; i < imgs.length; i++) {
-        imgs[i].src = "icons/home_30dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg";
-    }
-
-    for (let i = 0; i < p.length; i++) {
-        p[i].classList.remove("active");
-    }
-
-    var imgs = profileTabBtn.getElementsByTagName("img");
-    var p = profileTabBtn.getElementsByTagName("p");
-
-    for (let i = 0; i < imgs.length; i++) {
-        imgs[i].src = "icons/person_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg";
-    }
-
-    for (let i = 0; i < p.length; i++) {
-        p[i].classList.remove("active");
-    }
+    profileTabBtn.querySelector("img").src = "icons/person_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg";
+    profileTabBtn.querySelector("p").classList.remove("active");
 
     // Enable this tab
-    var imgs = tasksTabBtn.getElementsByTagName("img");
-    var p = tasksTabBtn.getElementsByTagName("p");
-
-    for (let i = 0; i < imgs.length; i++) {
-        imgs[i].src = "icons/splitscreen_30dp_5F6368_FILL1_wght400_GRAD0_opsz24.svg";
-    }
-
-    for (let i = 0; i < p.length; i++) {
-        p[i].classList.add("active");
-    }
+    tasksTabBtn.querySelector("img").src = "icons/splitscreen_30dp_5F6368_FILL1_wght400_GRAD0_opsz24.svg";
+    tasksTabBtn.querySelector("p").classList.add("active");
 
     main.style.backgroundImage = "url(icons/splitscreen_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg)";
 });
 
 profileTabBtn.addEventListener("click", () => {
     // Disable any active tab
-    var imgs = homeTabBtn.getElementsByTagName("img");
-    var p = homeTabBtn.getElementsByTagName("p");
+    homeTabBtn.querySelector("img").src = "icons/home_30dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg";
+    homeTabBtn.querySelector("p").classList.remove("active");
 
-    for (let i = 0; i < imgs.length; i++) {
-        imgs[i].src = "icons/home_30dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg";
-    }
-
-    for (let i = 0; i < p.length; i++) {
-        p[i].classList.remove("active");
-    }
-
-    var imgs = tasksTabBtn.getElementsByTagName("img");
-    var p = tasksTabBtn.getElementsByTagName("p");
-
-    for (let i = 0; i < imgs.length; i++) {
-        imgs[i].src = "icons/splitscreen_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg";
-    }
-
-    for (let i = 0; i < p.length; i++) {
-        p[i].classList.remove("active");
-    }
+    tasksTabBtn.querySelector("img").src = "icons/splitscreen_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg";
+    tasksTabBtn.querySelector("p").classList.remove("active");
 
     // Enable this tab
-    var imgs = profileTabBtn.getElementsByTagName("img");
-    var p = profileTabBtn.getElementsByTagName("p");
-
-    for (let i = 0; i < imgs.length; i++) {
-        imgs[i].src = "icons/person_30dp_5F6368_FILL1_wght400_GRAD0_opsz24.svg";
-    }
-
-    for (let i = 0; i < p.length; i++) {
-        p[i].classList.add("active");
-    }
+    profileTabBtn.querySelector("img").src = "icons/person_30dp_5F6368_FILL1_wght400_GRAD0_opsz24.svg";
+    profileTabBtn.querySelector("p").classList.add("active");
 
     main.style.backgroundImage = "url(icons/person_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg)";
 });

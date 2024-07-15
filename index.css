@@ -35,7 +35,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 header img {
@@ -50,7 +50,7 @@ header img.logo {
 
 
 main {
-    background-image: url(icons/timer_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg);
+    background-image: url(icons/home_30dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100px;
