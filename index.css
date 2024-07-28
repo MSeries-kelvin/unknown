@@ -16,6 +16,10 @@
     font-family: sans-serif; */
 }
 
+:root {
+    --main-color: #6600cc;
+}
+
 body {
     font-size: 100%;
     height: 100vh;
@@ -25,9 +29,14 @@ body {
 
 .app_main_container {
     width: 100%;
+    /* Temporary width */
+    /* width: 400px; */
+    /* border: 1px solid #000; */
+    margin: auto;
     height: 100%;
     display: grid;
     grid-template-rows: 50px 1fr 60px;
+    grid-template-columns: 1fr;
 }
 
 header {
@@ -36,6 +45,9 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    /* z-index: -1; */
 }
 
 header img {
@@ -57,6 +69,8 @@ main {
     overflow: auto;
     padding: 0 20px;
     text-align: center;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
 }
 
 footer {
@@ -65,6 +79,8 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-around;
     align-items: center;
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
 }
 
 footer div {
@@ -88,5 +104,79 @@ footer div p {
 }
 
 footer div p.active {
-    color: #6600cc;
+    color: var(--main-color);
+}
+
+
+/* main_overlay_container */
+.main_overlay_container {
+    grid-column: 1 / 2;
+    /* width: 400px; */
+    grid-row: 1 / 4;
+    background-color: #fff;
+    z-index: 1;
+    overflow: auto;
+    /* display: none; */
+
+    /* temporary fixed for centering items */
+    /* display: flex; */
+    /* align-items: center; */
+}
+
+.register_form {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: none;
+    padding-top: 150px;
+}
+
+.login_form {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    /* display: none; */
+    padding-top: 200px;
+}
+
+.register_form input, .login_form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.register_form button#register_button, .login_form button#login_button {
+    padding: 10px;
+    width: 100%;
+    height: 39px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.register_form p, .login_form p {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.register_form button#show_login_section, .login_form button#show_register_section {
+    /* width: 63.359px; */
+    padding: 5px;
+    margin: auto;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 1em;
 }

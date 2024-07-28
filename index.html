@@ -45,7 +45,30 @@
                 <p>Profile</p>
             </div>
         </footer>
+        <div class="main_overlay_container" id="main_overlay_container">
+            <form class="register_form" id="register_form">
+                <p>Register</p>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+                <label for="registerPhoneNumber">Phone Number:</label>
+                <input type="number" name="registerPhoneNumber" id="registerPhoneNumber" min="11" max="11">
+                <label for="registerPassword">Password:</label>
+                <input type="text" name="registerPassword" id="registerPassword" min="8">
+                <button type="button" id="register_button">Create Account</button>
+                <button id="show_login_section" type="button">login</button>
+            </form>
+            <form class="login_form" id="login_form">
+                <p>Login</p>
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="number" name="phoneNumber" id="phoneNumber" min="11" max="11">
+                <label for="password">Password:</label>
+                <input type="text" name="password" id="password" min="8">
+                <button type="button" id="login_button">Login</button>
+                <button id="show_register_section" type="button">register</button>
+            </form>
+        </div>
     </div>
     <script src="index.js"></script>
+    <script src="handleRequest.js"></script>
 </body>
 </html>
