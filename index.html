@@ -16,18 +16,11 @@
             <img src="icons/menu_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="menu">
         </header>
         <main>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi porro consectetur doloremque? Vero, consequatur est. Magni iure quae accusamus beatae quos excepturi, veniam distinctio veritatis amet quo incidunt. Dignissimos, eius!</p>
-            <br><br><br><br><br>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi porro consectetur doloremque? Vero, consequatur est. Magni iure quae accusamus beatae quos excepturi, veniam distinctio veritatis amet quo incidunt. Dignissimos, eius!</p>
-            <br><br><br><br><br>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi porro consectetur doloremque? Vero, consequatur est. Magni iure quae accusamus beatae quos excepturi, veniam distinctio veritatis amet quo incidunt. Dignissimos, eius!</p>
-            <br><br><br><br><br>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi porro consectetur doloremque? Vero, consequatur est. Magni iure quae accusamus beatae quos excepturi, veniam distinctio veritatis amet quo incidunt. Dignissimos, eius!</p>
-            <br><br><br><br><br>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi porro consectetur doloremque? Vero, consequatur est. Magni iure quae accusamus beatae quos excepturi, veniam distinctio veritatis amet quo incidunt. Dignissimos, eius!</p>
-            <br><br><br><br><br>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi porro consectetur doloremque? Vero, consequatur est. Magni iure quae accusamus beatae quos excepturi, veniam distinctio veritatis amet quo incidunt. Dignissimos, eius!</p>
-            <br><br><br><br><br>
+            <div class="not_authenticated_home">
+                <p>You are signed out.</p>
+                <button id="show_login_section" type="button">Sign in</button>
+                <button id="show_register_section" type="button">Create Account</button>
+            </div>
         </main>
         <footer>
             <!-- Find a solution for the need to download the image every time. -->
@@ -50,7 +43,7 @@
                 <img src="icons/arrow_back_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="back" class="icon">
                 <br>
                 <img src="images/logo.png" alt="logo" width="90px" class="logo">
-                <p>Create Account</p>
+                <p>Create Account.</p>
                 <input type="text" name="name" id="name" placeholder="Full Name">
                 <span></span>
                 <input type="number" name="registerPhoneNumber" id="registerPhoneNumber" placeholder="Phone Number">
@@ -64,7 +57,6 @@
                     <label for="remember_me">Agree to terms and conditions</label>
                 </div>
                 <button type="button" id="register_button">Create Account</button>
-                <!-- <button id="show_login_section" type="button">login</button> -->
             </form>
             <form class="login_form" id="login_form">
                 <img src="icons/arrow_back_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="back" class="icon">
@@ -75,8 +67,7 @@
                 <span><!--Invalid phone number--></span>
                 <input type="text" name="password" id="password" placeholder="Password">
                 <span><!--Password must be at least 8 characters long--></span>
-                <button type="button" id="login_button">Login</button>
-                <!-- <button id="show_register_section" type="button">register</button> -->
+                <button type="button" id="login_button">Sign in</button>
             </form>
         </div>
     </div>

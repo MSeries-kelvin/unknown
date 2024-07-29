@@ -110,12 +110,14 @@ const loginForm = document.getElementById("login_form");
 const registerForm = document.getElementById("register_form");
 
 
-// showLoginSectionButton.addEventListener("click", () => {
-//     registerForm.style.display = "none";
-//     loginForm.style.display = "block";
-// });
+showLoginSectionButton.addEventListener("click", () => {
+    registerForm.style.display = "none";
+    loginForm.style.display = "block";
+    mainOverlayContainer.style.display = "block";
+});
 
-// showRegisterSectionButton.addEventListener("click", () => {
-//     loginForm.style.display = "none";
-//     registerForm.style.display = "block";
-// });
+showRegisterSectionButton.addEventListener("click", () => {
+    loginForm.style.display = "none";
+    registerForm.style.display = "block";
+    mainOverlayContainer.style.display = "block";
+});

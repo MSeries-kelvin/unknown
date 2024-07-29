@@ -117,7 +117,7 @@ footer div p.active {
     background-color: #fff;
     z-index: 1;
     overflow: auto;
-    /* display: none; */
+    display: none;
 }
 
 /* login_form */
@@ -126,7 +126,7 @@ footer div p.active {
     width: 100%;
     height: 100%;
     padding: 20px;
-    /* display: none; */
+    display: none;
     padding-top: 15px;
     background-color: transparent;
 }
@@ -204,7 +204,7 @@ footer div p.active {
     width: 100%;
     height: 100%;
     padding: 15px;
-    /* display: none; */
+    display: none;
     padding-top: 20px;
     /* background-color: #fff; */
     background-color: transparent;
@@ -277,4 +277,48 @@ footer div p.active {
 
 .register_form p {
     margin-bottom: 30px;
+}
+
+/*--------------------- not_authenticated_home ------------------------*/
+
+.not_authenticated_home {
+    width: 100%;
+    height: 100%;
+    /* background-color: green; */
+    padding-top: 390px;
+}
+
+.not_authenticated_home #show_login_section {
+    padding: 20px;
+    width: 100%;
+    margin-top: 30px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.not_authenticated_home #show_register_section {
+    padding: 20px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    /* background-color: transparent; */
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    color: #000;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.not_authenticated_home p {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
 }
