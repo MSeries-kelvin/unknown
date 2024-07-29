@@ -3,8 +3,9 @@ const registerButton = document.getElementById("register_button");
 const loginButton = document.getElementById("login_button");
 
 registerButton.addEventListener("click", async () => {
-    if (validateRegistrationInfo()[0]) {
-        const validatedData = validateRegistrationInfo()[1];
+    const validationResults = validateRegistrationInfo();
+    if (validationResults[0]) {
+        const validatedData = validationResults[1];
         
         // const url = "http://localhost:8000/api/auth/register";
         const url = "https://unknown-backend.onrender.com/api/auth/register";
@@ -41,7 +42,6 @@ function validateRegistrationInfo() {
     const password = passwordHolder.value;
     const confirmPassword = confirmPasswordHolder.value;
 
-    // alert(phoneNumber + password);
     nameHolder.value = "";
     phoneNumberHolder.value = "";
     passwordHolder.value = "";
@@ -51,8 +51,10 @@ function validateRegistrationInfo() {
 }
 
 loginButton.addEventListener("click", async () => {
-    if (validateLoginInfo()[0]) {
-        const validatedData = validateLoginInfo()[1];
+    const validationResults = validateLoginInfo();
+
+    if (validationResults[0]) {
+        const validatedData = validationResults[1];
         
         // const url = "http://localhost:8000/api/auth/login";
         const url = "https://unknown-backend.onrender.com/api/auth/login";
@@ -108,12 +110,12 @@ const loginForm = document.getElementById("login_form");
 const registerForm = document.getElementById("register_form");
 
 
-showLoginSectionButton.addEventListener("click", () => {
-    registerForm.style.display = "none";
-    loginForm.style.display = "block";
-});
+// showLoginSectionButton.addEventListener("click", () => {
+//     registerForm.style.display = "none";
+//     loginForm.style.display = "block";
+// });
 
-showRegisterSectionButton.addEventListener("click", () => {
-    loginForm.style.display = "none";
-    registerForm.style.display = "block";
-});
+// showRegisterSectionButton.addEventListener("click", () => {
+//     loginForm.style.display = "none";
+//     registerForm.style.display = "block";
+// });
