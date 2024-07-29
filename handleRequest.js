@@ -47,7 +47,7 @@ function validateRegistrationInfo() {
     passwordHolder.value = "";
     confirmPasswordHolder.value = "";
 
-    return [true, { name, phoneNumber, password }];
+    return [true, { name: name, phoneNumber: phoneNumber, password: password }];
 }
 
 loginButton.addEventListener("click", async () => {
@@ -97,7 +97,7 @@ function validateLoginInfo() {
     phoneNumberHolder.value = "";
     passwordHolder.value = "";
     
-    return [true, { phoneNumber, password }];
+    return [true, { phoneNumber: phoneNumber, password: password }];
 }
 
 
