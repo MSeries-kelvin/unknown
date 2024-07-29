@@ -35,8 +35,19 @@ function validateRegistrationInfo() {
     const nameHolder = document.getElementById("name");
     const phoneNumberHolder = document.getElementById("registerPhoneNumber");
     const passwordHolder = document.getElementById("registerPassword");
+    const confirmPasswordHolder = document.getElementById("confirmPassword");
+    const name = nameHolder.value;
+    const phoneNumber = phoneNumberHolder.value;
+    const password = passwordHolder.value;
+    const confirmPassword = confirmPasswordHolder.value;
 
-    return [true, { name: nameHolder.value, phoneNumber: phoneNumberHolder.value, password: passwordHolder.value }];
+    // alert(phoneNumber + password);
+    nameHolder.value = "";
+    phoneNumberHolder.value = "";
+    passwordHolder.value = "";
+    confirmPasswordHolder.value = "";
+
+    return [true, { name, phoneNumber, password }];
 }
 
 loginButton.addEventListener("click", async () => {
@@ -79,8 +90,14 @@ function validateLoginInfo() {
 
     const phoneNumberHolder = document.getElementById("phoneNumber");
     const passwordHolder = document.getElementById("password");
+    const phoneNumber = phoneNumberHolder.value;
+    const password = passwordHolder.value;
 
-    return [true, { phoneNumber: phoneNumberHolder.value, password: passwordHolder.value }];
+    // alert(phoneNumber + password);
+    phoneNumberHolder.value = "";
+    passwordHolder.value = "";
+    
+    return [true, { phoneNumber, password }];
 }
 
 

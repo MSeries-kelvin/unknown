@@ -47,24 +47,36 @@
         </footer>
         <div class="main_overlay_container" id="main_overlay_container">
             <form class="register_form" id="register_form">
-                <p>Register</p>
-                <label for="name">Name:</label>
-                <input type="text" name="name" id="name">
-                <label for="registerPhoneNumber">Phone Number:</label>
-                <input type="number" name="registerPhoneNumber" id="registerPhoneNumber" min="11" max="11">
-                <label for="registerPassword">Password:</label>
-                <input type="text" name="registerPassword" id="registerPassword" min="8">
+                <img src="icons/arrow_back_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="back" class="icon">
+                <br>
+                <img src="images/logo.png" alt="logo" width="90px" class="logo">
+                <p>Create Account</p>
+                <input type="text" name="name" id="name" placeholder="Full Name">
+                <span></span>
+                <input type="number" name="registerPhoneNumber" id="registerPhoneNumber" placeholder="Phone Number">
+                <span></span>
+                <input type="text" name="registerPassword" id="registerPassword" placeholder="Password">
+                <span></span>
+                <input type="text" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
+                <span></span>
+                <div>
+                    <input type="checkbox" name="remember_me" id="remember_me">
+                    <label for="remember_me">Agree to terms and conditions</label>
+                </div>
                 <button type="button" id="register_button">Create Account</button>
-                <button id="show_login_section" type="button">login</button>
+                <!-- <button id="show_login_section" type="button">login</button> -->
             </form>
             <form class="login_form" id="login_form">
-                <p>Login</p>
-                <label for="phoneNumber">Phone Number:</label>
-                <input type="number" name="phoneNumber" id="phoneNumber" min="11" max="11">
-                <label for="password">Password:</label>
-                <input type="text" name="password" id="password" min="8">
+                <img src="icons/arrow_back_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="back" class="icon">
+                <br>
+                <img src="images/logo.png" alt="logo" width="90px" class="logo">
+                <p>Welcome Back!</p>
+                <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Phone Number">
+                <span><!--Invalid phone number--></span>
+                <input type="text" name="password" id="password" placeholder="Password">
+                <span><!--Password must be at least 8 characters long--></span>
                 <button type="button" id="login_button">Login</button>
-                <button id="show_register_section" type="button">register</button>
+                <!-- <button id="show_register_section" type="button">register</button> -->
             </form>
         </div>
     </div>
