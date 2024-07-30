@@ -89,7 +89,7 @@ loginButton.addEventListener("click", async () => {
                 loaderView.style.display = "none";
                 notAuthenticatedView.style.display = "none";
             }, 200);
-            setTimeout(displayNotification, 1000);
+            setTimeout(displayNotification, 500);
             setTimeout(() => {
                 mainOverlayContainer.style.display = "none";
             }, 3000);
@@ -182,7 +182,7 @@ function displayNotification() {
         if (time == 0) clearInterval(loaderInterval);
         time = time - 10;
         notificationLoader.style.width = `${calculatePercent()}%`;
-    }, 30);
+    }, 20);
 
     setTimeout(closeNotificationBar, 5000);
 
