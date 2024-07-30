@@ -85,7 +85,7 @@ loginButton.addEventListener("click", async () => {
             
             // hide login holder
             loaderView.style.display = "none";
-            mainOverlayContainer.style.display = "none";
+            displayNotification();
         })
         .catch((error) => console.error(`Error: ${error}`));
     }
@@ -150,14 +150,51 @@ closeLoginFormBtn.addEventListener("click", () => {
 // display: flex;
 const notificationBarView = document.getElementById("notification_bar_view");
 const closeNotificationBarBtn = document.getElementById("remove_notification");
+const notificationLoader = document.getElementById("notification_loader");
 
 closeNotificationBarBtn.addEventListener("click", closeNotificationBar);
 function closeNotificationBar() {
-    notificationBarView.innerHTML = "";
+    // temperary id
+    const notification = document.getElementById("notification1");
+    notification.style.display = "none";
     notificationBarView.style.display = "none";
 }
 
-{/* <div class="notification_bar_view" id="notification_bar_view">
+function displayNotification() {
+    // all things needed will be passed as a parameter
+    const notification = document.getElementById("notification1");
+
+    notification.style.display = "block";
+    notificationBarView.style.display = "flex";
+
+    let time = 2000;
+
+    // try to make a loader that runs for 2 secs
+    let loaderInterval = setInterval(() => {
+        if (time == 0) clearInterval(loaderInterval);
+        time = time - 20;
+        notificationLoader.style.width = `${calculatePercent()}%`;
+    }, 20);
+
+    closeNotificationBar();
+    mainOverlayContainer.style.display = "none";
+
+    function calculatePercent() {
+        // 2000 = 100%
+        // 1980 = x
+        // 2000x = 1980 * 100
+        // x = 198000 / 2000
+        const percent = time * 100 / 2000;
+        return percent;
+    }
+}
+
+
+
+
+
+
+/* <div class="notification_bar_view" id="notification_bar_view">
 <div class="notification">
     <div class="notification_header">
         <img src="icons/close_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="close" width="20px" id="remove_notification">
@@ -168,4 +205,4 @@ function closeNotificationBar() {
     </div>
     <div class="notification_footer"><span></span></div>
 </div>
-</div> */}
+</div> */
