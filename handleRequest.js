@@ -81,17 +81,18 @@ loginButton.addEventListener("click", async () => {
             
             const { user } = await response.json();
             console.log(user);
-            // alert(`You're logged in: ${user.name}`);
+            alert(`You're logged in: ${user.name}`);
             
             // hide login holder
-            await closeLoginForm();
+            closeLoginForm();
             setTimeout(() => {
                 loaderView.style.display = "none";
+                notAuthenticatedView.style.display = "none";
             }, 200);
-            await displayNotification();
+            displayNotification();
             setTimeout(() => {
                 mainOverlayContainer.style.display = "none";
-            }, 2300);
+            }, 2000);
         })
         .catch((error) => console.error(`Error: ${error}`));
     }
@@ -160,14 +161,14 @@ const closeNotificationBarBtn = document.getElementById("remove_notification");
 const notificationLoader = document.getElementById("notification_loader");
 
 closeNotificationBarBtn.addEventListener("click", closeNotificationBar);
-async function closeNotificationBar() {
+function closeNotificationBar() {
     // temperary id
     const notification = document.getElementById("notification1");
     notification.style.display = "none";
     notificationBarView.style.display = "none";
 }
 
-async function displayNotification() {
+function displayNotification() {
     // all things needed will be passed as a parameter
     const notification = document.getElementById("notification1");
 
@@ -183,7 +184,7 @@ async function displayNotification() {
         notificationLoader.style.width = `${calculatePercent()}%`;
     }, 20);
 
-    await closeNotificationBar();
+    setTimeout(closeNotificationBar, 3000);
 
     function calculatePercent() {
         // 2000 = 100%

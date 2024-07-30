@@ -118,7 +118,7 @@ footer div p.active {
     grid-column: 1 / 2;
     /* width: 400px; */
     grid-row: 1 / 4;
-    background-color: #fff;
+    background-color: transparent;
     z-index: 1;
     overflow: auto;
     display: grid;
@@ -133,8 +133,9 @@ footer div p.active {
     height: 100%;
     padding: 20px;
     display: none;
+    background-color: #fff;
     padding-top: 15px;
-    background-color: transparent;
+    /* background-color: transparent; */
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 }
@@ -215,8 +216,8 @@ footer div p.active {
     padding: 15px;
     display: none;
     padding-top: 20px;
-    /* background-color: #fff; */
-    background-color: transparent;
+    background-color: #fff;
+    /* background-color: transparent; */
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 }
@@ -300,7 +301,7 @@ footer div p.active {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 130px;
-    /* background-color: green; */
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -398,7 +399,7 @@ footer div p.active {
     background-color: transparent;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    /* display: none; */
+    display: none;
 }
 
 .notification {
