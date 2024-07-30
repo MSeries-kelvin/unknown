@@ -16,11 +16,7 @@
             <img src="icons/menu_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="menu">
         </header>
         <main>
-            <div class="not_authenticated_home">
-                <p>You are signed out.</p>
-                <button id="show_login_section" type="button">Sign in</button>
-                <button id="show_register_section" type="button">Create Account</button>
-            </div>
+
         </main>
         <footer>
             <!-- Find a solution for the need to download the image every time. -->
@@ -40,7 +36,7 @@
         </footer>
         <div class="main_overlay_container" id="main_overlay_container">
             <form class="register_form" id="register_form">
-                <img src="icons/arrow_back_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="back" class="icon">
+                <img src="icons/arrow_back_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="back" class="icon" id="close_register_form">
                 <br>
                 <img src="images/logo.png" alt="logo" width="90px" class="logo">
                 <p>Create Account.</p>
@@ -59,7 +55,7 @@
                 <button type="button" id="register_button">Create Account</button>
             </form>
             <form class="login_form" id="login_form">
-                <img src="icons/arrow_back_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="back" class="icon">
+                <img src="icons/arrow_back_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="back" class="icon" id="close_login_form">
                 <br>
                 <img src="images/logo.png" alt="logo" width="90px" class="logo">
                 <p>Welcome Back!</p>
@@ -69,6 +65,16 @@
                 <span><!--Password must be at least 8 characters long--></span>
                 <button type="button" id="login_button">Sign in</button>
             </form>
+            <div class="not_authenticated_home" id="not_authenticated_home">
+                <!-- <p>You are signed out.</p> -->
+                <button id="show_login_section" type="button">Sign in</button>
+                <button id="show_register_section" type="button">Create Account</button>
+            </div>
+            <div class="loader_view" id="loader_view">
+                <div>
+                    <span></span>
+                </div>
+            </div>
         </div>
     </div>
     <script src="index.js"></script>

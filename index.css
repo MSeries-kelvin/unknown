@@ -109,7 +109,7 @@ footer div p.active {
 }
 
 
-/* main_overlay_container */
+/*--------------------------- main_overlay_container -------------------------*/
 .main_overlay_container {
     grid-column: 1 / 2;
     /* width: 400px; */
@@ -117,10 +117,12 @@ footer div p.active {
     background-color: #fff;
     z-index: 1;
     overflow: auto;
-    display: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 }
 
-/* login_form */
+/*-------------------- login_form ----------------------*/
 
 .login_form {
     width: 100%;
@@ -129,6 +131,8 @@ footer div p.active {
     display: none;
     padding-top: 15px;
     background-color: transparent;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
 .icon {
@@ -138,6 +142,7 @@ footer div p.active {
 .login_form .logo {
     display: block;
     margin: 60px auto;
+    width: 130px;
 }
 
 .login_form input {
@@ -208,6 +213,8 @@ footer div p.active {
     padding-top: 20px;
     /* background-color: #fff; */
     background-color: transparent;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
 .icon {
@@ -217,6 +224,7 @@ footer div p.active {
 .register_form .logo {
     display: block;
     margin: 40px auto 50px;
+    width: 130px;
 }
 
 .register_form input {
@@ -284,14 +292,24 @@ footer div p.active {
 .not_authenticated_home {
     width: 100%;
     height: 100%;
+    background-image: url(images/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 130px;
     /* background-color: green; */
-    padding-top: 390px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 20px 60px;
+    justify-content: flex-end;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
 .not_authenticated_home #show_login_section {
     padding: 20px;
     width: 100%;
-    margin-top: 30px;
+    min-width: 100%;
     cursor: pointer;
     background-color: var(--main-color);
     border-radius: 3px;
@@ -300,25 +318,66 @@ footer div p.active {
     color: #fff;
     font-size: 1em;
     font-weight: 700;
+    align-self: flex-start;
 }
 
 .not_authenticated_home #show_register_section {
     padding: 20px;
     width: 100%;
-    margin-top: 10px;
     cursor: pointer;
-    /* background-color: transparent; */
+    background-color: transparent;
     border-radius: 3px;
     outline: none;
     border: none;
     color: #000;
     font-size: 1em;
     font-weight: 700;
+    /* justify-self: flex-end; */
 }
 
-.not_authenticated_home p {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: left;
+.not_authenticated_home #show_register_section:hover {
+    background-color: #f0f0f0;
+}
+
+/*----------------------- loader_view -------------------------------*/
+
+.loader_view {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #0000004b;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: none;
+}
+
+.loader_view div {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.loader_view span {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid var(--main-color);
+    border-right-color: transparent ;
+    animation: loader_spinner 1s linear 0s infinite;
+}
+
+@keyframes loader_spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

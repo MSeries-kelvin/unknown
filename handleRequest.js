@@ -1,9 +1,12 @@
 const mainOverlayContainer = document.getElementById("main_overlay_container");
 const registerButton = document.getElementById("register_button");
 const loginButton = document.getElementById("login_button");
+const loaderView = document.getElementById("loader_view");
 
 registerButton.addEventListener("click", async () => {
+    loaderView.style.display = "grid";
     const validationResults = validateRegistrationInfo();
+
     if (validationResults[0]) {
         const validatedData = validationResults[1];
         
@@ -23,6 +26,8 @@ registerButton.addEventListener("click", async () => {
             body: requestBody
         })
             .then((response) => console.log(response.json()))
+            .then(() => loaderView.style.display = "none")
+            .then(() => showLoginSection())
             .catch((error) => console.error(`Error: ${error}`));
     }
 });
@@ -51,6 +56,7 @@ function validateRegistrationInfo() {
 }
 
 loginButton.addEventListener("click", async () => {
+    loaderView.style.display = "grid";
     const validationResults = validateLoginInfo();
 
     if (validationResults[0]) {
@@ -78,6 +84,7 @@ loginButton.addEventListener("click", async () => {
             alert(`You're logged in: ${user.name}`);
             
             // hide login holder
+            loaderView.style.display = "none";
             mainOverlayContainer.style.display = "none";
         })
         .catch((error) => console.error(`Error: ${error}`));
@@ -109,15 +116,29 @@ const showRegisterSectionButton = document.getElementById("show_register_section
 const loginForm = document.getElementById("login_form");
 const registerForm = document.getElementById("register_form");
 
+const closeLoginFormBtn = document.getElementById("close_login_form");
+const closeRegisterFormBtn = document.getElementById("close_register_form");
+const notAuthenticatedView = document.getElementById("not_authenticated_home");
 
-showLoginSectionButton.addEventListener("click", () => {
+showLoginSectionButton.addEventListener("click", showLoginSection);
+function showLoginSection() {
     registerForm.style.display = "none";
     loginForm.style.display = "block";
-    mainOverlayContainer.style.display = "block";
-});
+    notAuthenticatedView.style.display = "none";
+}
 
 showRegisterSectionButton.addEventListener("click", () => {
     loginForm.style.display = "none";
     registerForm.style.display = "block";
-    mainOverlayContainer.style.display = "block";
+    notAuthenticatedView.style.display = "none";
+});
+
+closeRegisterFormBtn.addEventListener("click", () => {
+    registerForm.style.display = "none";
+    notAuthenticatedView.style.display = "flex";
+});
+
+closeLoginFormBtn.addEventListener("click", () => {
+    loginForm.style.display = "none";
+    notAuthenticatedView.style.display = "flex";
 });
