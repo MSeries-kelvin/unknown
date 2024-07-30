@@ -142,3 +142,30 @@ closeLoginFormBtn.addEventListener("click", () => {
     loginForm.style.display = "none";
     notAuthenticatedView.style.display = "flex";
 });
+
+
+
+
+// notification_bar_view
+// display: flex;
+const notificationBarView = document.getElementById("notification_bar_view");
+const closeNotificationBarBtn = document.getElementById("remove_notification");
+
+closeNotificationBarBtn.addEventListener("click", closeNotificationBar);
+function closeNotificationBar() {
+    notificationBarView.innerHTML = "";
+    notificationBarView.style.display = "none";
+}
+
+{/* <div class="notification_bar_view" id="notification_bar_view">
+<div class="notification">
+    <div class="notification_header">
+        <img src="icons/close_30dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="close" width="20px" id="remove_notification">
+    </div>
+    <div class="notification_body">
+        <img src="icons/info_30dp_5F6368_FILL1_wght400_GRAD0_opsz24.svg" alt="">
+        <p>You have successfully signed in</p>
+    </div>
+    <div class="notification_footer"><span></span></div>
+</div>
+</div> */}

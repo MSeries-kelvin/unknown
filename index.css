@@ -25,12 +25,15 @@ body {
     height: 100vh;
     width: 100vw;
     /* overflow: hidden; */
+    background-color: #000;
+    background-image: url(images/logo.png);
+    background-size: 50px;
 }
 
 .app_main_container {
     width: 100%;
     /* Temporary width */
-    /* width: 400px; */
+    max-width: 400px;
     /* border: 1px solid #000; */
     margin: auto;
     height: 100%;
@@ -380,4 +383,62 @@ footer div p.active {
     100% {
         transform: rotate(360deg);
     }
+}
+
+/*----------------------- notification_bar_view -------------------------------*/
+
+.notification_bar_view {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background-color: transparent;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    /* display: none; */
+}
+
+.notification {
+    /* background-color: white; */
+    background-color: #e6e6e6;
+    border-radius: 5px;
+}
+
+.notification_header {
+    width: 100%;
+    padding: 5px 5px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.notification_header img {
+    width: 20px;
+    cursor: pointer;
+}
+
+.notification_body {
+    padding: 0 5px 10px;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    font-size: .9em;
+}
+
+.notification_footer {
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgba(102, 0, 204, 0.3);
+    overflow: hidden;
+}
+
+.notification_footer span {
+    display: block;
+    width: 100%;
+    padding: 3px;
+    width: 35%;
+    background-color: #6600cc;
 }
