@@ -89,7 +89,7 @@ loginButton.addEventListener("click", async () => {
                 loaderView.style.display = "none";
                 notAuthenticatedView.style.display = "none";
             }, 200);
-            displayNotification();
+            setTimeout(displayNotification, 2000);
             setTimeout(() => {
                 mainOverlayContainer.style.display = "none";
             }, 3000);
