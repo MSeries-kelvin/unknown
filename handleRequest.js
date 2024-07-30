@@ -89,7 +89,7 @@ loginButton.addEventListener("click", async () => {
                 loaderView.style.display = "none";
                 notAuthenticatedView.style.display = "none";
             }, 200);
-            setTimeout(displayNotification, 2000);
+            setTimeout(displayNotification, 1000);
             setTimeout(() => {
                 mainOverlayContainer.style.display = "none";
             }, 3000);
@@ -184,7 +184,7 @@ function displayNotification() {
         notificationLoader.style.width = `${calculatePercent()}%`;
     }, 30);
 
-    setTimeout(closeNotificationBar, 4000);
+    setTimeout(closeNotificationBar, 5000);
 
     function calculatePercent() {
         // 2000 = 100%
