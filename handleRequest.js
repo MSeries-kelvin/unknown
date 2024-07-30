@@ -85,9 +85,13 @@ loginButton.addEventListener("click", async () => {
             
             // hide login holder
             await closeLoginForm();
-            loaderView.style.display = "none";
+            setTimeout(() => {
+                loaderView.style.display = "none";
+            }, 200);
             await displayNotification();
-            mainOverlayContainer.style.display = "none";
+            setTimeout(() => {
+                mainOverlayContainer.style.display = "none";
+            }, 2300);
         })
         .catch((error) => console.error(`Error: ${error}`));
     }
