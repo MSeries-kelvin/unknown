@@ -81,7 +81,7 @@ loginButton.addEventListener("click", async () => {
             
             const { user } = await response.json();
             console.log(user);
-            alert(`You're logged in: ${user.name}`);
+            // alert(`You're logged in: ${user.name}`);
             
             // hide login holder
             closeLoginForm();
@@ -92,7 +92,7 @@ loginButton.addEventListener("click", async () => {
             displayNotification();
             setTimeout(() => {
                 mainOverlayContainer.style.display = "none";
-            }, 2000);
+            }, 3000);
         })
         .catch((error) => console.error(`Error: ${error}`));
     }
@@ -175,23 +175,23 @@ function displayNotification() {
     notification.style.display = "block";
     notificationBarView.style.display = "flex";
 
-    let time = 2000;
+    let time = 1000;
 
     // try to make a loader that runs for 2 secs
     let loaderInterval = setInterval(() => {
         if (time == 0) clearInterval(loaderInterval);
-        time = time - 20;
+        time = time - 10;
         notificationLoader.style.width = `${calculatePercent()}%`;
-    }, 20);
+    }, 30);
 
-    setTimeout(closeNotificationBar, 3000);
+    setTimeout(closeNotificationBar, 4000);
 
     function calculatePercent() {
         // 2000 = 100%
         // 1980 = x
         // 2000x = 1980 * 100
         // x = 198000 / 2000
-        const percent = time * 100 / 2000;
+        const percent = time * 100 / 1000;
         return percent;
     }
 }
