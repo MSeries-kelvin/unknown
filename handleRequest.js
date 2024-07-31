@@ -1,3 +1,8 @@
+// Trying to make all functions that take time to run
+// async and return a promise object, so other async
+// functions can wait till they're done, before 
+// continueing.
+
 const mainOverlayContainer = document.getElementById("main_overlay_container");
 const registerButton = document.getElementById("register_button");
 const loginButton = document.getElementById("login_button");
@@ -85,14 +90,11 @@ loginButton.addEventListener("click", async () => {
             
             // hide login holder
             closeLoginForm();
+            await displayNotification(false);
             setTimeout(() => {
                 loaderView.style.display = "none";
                 notAuthenticatedView.style.display = "none";
-            }, 200);
-            setTimeout(displayNotification, 500);
-            setTimeout(() => {
-                mainOverlayContainer.style.display = "none";
-            }, 3000);
+            }, 1000);
         })
         .catch((error) => console.error(`Error: ${error}`));
     }
@@ -146,7 +148,7 @@ closeRegisterFormBtn.addEventListener("click", () => {
 });
 
 closeLoginFormBtn.addEventListener("click", closeLoginForm);
-async function closeLoginForm() {
+function closeLoginForm() {
     loginForm.style.display = "none";
     notAuthenticatedView.style.display = "flex";
 }
@@ -168,32 +170,41 @@ function closeNotificationBar() {
     notificationBarView.style.display = "none";
 }
 
-function displayNotification() {
-    // all things needed will be passed as a parameter
-    const notification = document.getElementById("notification1");
+// isMain (bool), if set to false, then you need to manually
+// close (hide) main overlay container
+async function displayNotification(isMain) {
+    return new Promise((resolve) => {
+        // all things needed will be passed as a parameter
+        const notification = document.getElementById("notification1");
 
-    notification.style.display = "block";
-    notificationBarView.style.display = "flex";
+        // show main overlay banner
+        mainOverlayContainer.style.display = "grid";
 
-    let time = 1000;
+        notification.style.display = "block";
+        notificationBarView.style.display = "flex";
 
-    // try to make a loader that runs for 2 secs
-    let loaderInterval = setInterval(() => {
-        if (time == 0) clearInterval(loaderInterval);
-        time = time - 10;
-        notificationLoader.style.width = `${calculatePercent()}%`;
-    }, 20);
+        // try to make a loader that runs for 2 secs
+        let time = 1000;
+        let loaderInterval = setInterval(() => {
+            if (time == 0) {
+                clearInterval(loaderInterval);
 
-    setTimeout(closeNotificationBar, 5000);
+                // close Notification Bar
+                notification.style.display = "none";
+                notificationBarView.style.display = "none";
 
-    function calculatePercent() {
-        // 2000 = 100%
-        // 1980 = x
-        // 2000x = 1980 * 100
-        // x = 198000 / 2000
-        const percent = time * 100 / 1000;
-        return percent;
-    }
+                if (isMain)
+                    // hide main overlay banner
+                    mainOverlayContainer.style.display = "none";
+                resolve("done");
+            }
+            time = time - 10;
+
+            // calculate how much time left in percentage then assign the 
+            // value to the width of notification loader.
+            notificationLoader.style.width = `${time * 100 / 1000}%`;
+        }, 20);
+    });
 }
 
 
