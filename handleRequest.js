@@ -7,6 +7,30 @@ const mainOverlayContainer = document.getElementById("main_overlay_container");
 const registerButton = document.getElementById("register_button");
 const loginButton = document.getElementById("login_button");
 const loaderView = document.getElementById("loader_view");
+const server_url = "https://unknown-backend.onrender.com";
+// const server_url = "http://192.168.118.29:3000";
+
+this.onload = function() {
+        // const url = "http://localhost:8000/api/auth/register";
+        // const url = "https://unknown-backend.onrender.com/api/auth/register";
+        const url = `${server_url}/api/auth/status`;
+
+        fetch(url, {
+            method: "GET",
+            credentials: "include"
+        })
+        .then(async (response) => {
+            if (response.status === 200) return mainOverlayContainer.style.display = "none";
+
+            const result = await response.json();
+            console.log(`Status Text: ${response.statusText}`);
+            console.log(`Message: ${result.msg}`);
+        })
+        .catch((error) => {
+            console.error(`Error: ${error}`);
+            alert(`Error: ${error}`);
+        });
+}
 
 registerButton.addEventListener("click", async () => {
     loaderView.style.display = "grid";
@@ -16,7 +40,8 @@ registerButton.addEventListener("click", async () => {
         const validatedData = validationResults[1];
         
         // const url = "http://localhost:8000/api/auth/register";
-        const url = "https://unknown-backend.onrender.com/api/auth/register";
+        // const url = "https://unknown-backend.onrender.com/api/auth/register";
+        const url = `${server_url}/api/auth/register`;
         const requestBody = JSON.stringify({
             name: validatedData.name,
             phoneNumber: validatedData.phoneNumber,
@@ -68,7 +93,8 @@ loginButton.addEventListener("click", async () => {
         const validatedData = validationResults[1];
         
         // const url = "http://localhost:8000/api/auth/login";
-        const url = "https://unknown-backend.onrender.com/api/auth/login";
+        const url = `${server_url}/api/auth/login`;
+        // const url = "https://unknown-backend.onrender.com/api/auth/login";
         const requestBody = JSON.stringify({
             phoneNumber: validatedData.phoneNumber,
             password: validatedData.password
@@ -79,14 +105,31 @@ loginButton.addEventListener("click", async () => {
                 "Content-Type": "application/json"
             },
             method: "POST",
+            credentials: "include",
             body: requestBody
         })
         .then(async (response) => {   
-            if (response.status !== 200) return alert("Invalid credentials");
+            const tempOutput = document.querySelector("main code");
+            if (response.status !== 200) tempOutput.innerHTML = response.body;
+            if (response.status !== 200) console.log(response.body);
+
+            if (response.status == 200) tempOutput.innerHTML = response.body;
+            if (response.status == 200) {
+                // console.log(response.text());
+                console.log(response);
+            }
             
-            const { user } = await response.json();
-            console.log(user);
-            // alert(`You're logged in: ${user.name}`);
+            
+            try {
+                const { user } = await response.json();
+                if (user) {
+                    console.log(user);
+                    tempOutput.innerHTML = 
+                    `<br><br>Name: ${user.name}<br><br>Phone Number: ${user.phoneNumber}<br><br>Phase ID: ${user.phaseId}`;
+                }
+            } catch (err) {
+                alert(`Error: ${err}`);
+            }
             
             // hide login holder
             closeLoginForm();
@@ -94,9 +137,17 @@ loginButton.addEventListener("click", async () => {
             setTimeout(() => {
                 loaderView.style.display = "none";
                 notAuthenticatedView.style.display = "none";
+
+                // hide main overlay banner
+                mainOverlayContainer.style.display = "none";
             }, 1000);
+
+            return;
         })
-        .catch((error) => console.error(`Error: ${error}`));
+        .catch(async (error) => {
+            console.error(`Error: ${error}`);
+            alert(`Error: ${error}`);
+        });
     }
 });
 

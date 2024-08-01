@@ -72,10 +72,21 @@ main {
     background-position: center;
     background-size: 100px;
     overflow: auto;
+    overflow-x: hidden;
     padding: 0 20px;
-    text-align: center;
+    /* text-align: center; */
     grid-row: 2 / 3;
     grid-column: 1 / 2;
+}
+
+main code {
+    width: 360px;
+    max-width: 360px;
+    height: 100%;
+    overflow: auto;
+    /* text-align: left; */
+    display: block;
+    /* line-break: anywhere; */
 }
 
 footer {
